@@ -1,10 +1,15 @@
 # include <stdio.h>
-int * direccion_local (int x ) {
-return &x ;
+# include <stdlib.h>
+char * copiar_cadena ( char * cad , int longitud ) {
+char * a = malloc ( sizeof ( char ) * longitud ) ;
+a = cad ;
+return a ;
 }
-int main () {
-int * ptr = NULL ;
-ptr = direccion_local (2) ;
- printf (" %d\n", * ptr ) ;
+ int main () {
+ char a [10] = "hola";
+ char * b = copiar_cadena (a , 10) ;
+ printf ("%s %s\n", a , b ) ;
+ b[0] = 's';
+ printf ("%s %s\n", a , b ) ;
  return 0;
  }
