@@ -28,11 +28,62 @@ char* ej13 (int n) {
     if (suma <= 30) return "La suma de elementos es menor o igual a 30";
 }
 
+
+/*
+Ejercicio 18. Escriba una función que reciba una cadena de caracteres y un caracter y devuelva
+0 si el caracter esta presente en la cadena, o 1 en caso contrario.
+
+Ejercicio 19. Escriba una función que reciba una cadena de caracteres y un caracter y devuelva
+la cantidad de apariciones del caracter en la cadena dada.
+
+Ejercicio 20. Escriba un programa que lea por teclado una cadena de caracteres y la imprima
+por pantalla al revés.
+
+Ejercicio 21. Escriba una función que reciba una cadena de caracteres y determine si la
+misma es capicúa.
+
+Ejercicio 22. Escriba una función que reciba una cadena de caracteres y determine si es un
+pangrama, es decir, si para escribir la línea se utilizaron todos los caracteres del alfabeto.
+
+Ejercicio 23. Escriba una función que reciba dos cadenas de caracteres y determine si una
+está contenida dentro de la otra.
+*/
+
+int ej18 (char word[], int largo, char c) {
+    int found = 0;
+    for(int i = 0; i<largo; i++){
+        if (word[i] == c) found = 1;
+    }
+
+    if (found) return 1;
+    return 0;
+}
+
+
+int ej19 (char word[], int largo, char c) {
+    int count = 0;
+    for(int i = 0; i<largo; i++){
+        if (word[i] == c) count++;
+    }
+
+    return count;
+}
+
+void ej20 (char word[], int largo) {
+    for(int i = largo-1; i>=0; i--){
+        printf("%c", word[i]);
+    }
+}
+
 int main() {
     int a;
     //printf("El resultado es %i\n",fibonacci(0));
-    printf("Ingrese un entero: ");
-    scanf("%i",&a);
-    printf("%s",ej13(a));
+
+    //printf("Ingrese un entero: ");
+    //scanf("%i",&a);
+    //printf("%s",ej13(a));
+
+    ej20("hola",5);
     return 0;
 }
+
