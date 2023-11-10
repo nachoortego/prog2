@@ -122,3 +122,19 @@ Si `informacionCelda` esta en la posicion 100, `nombre` ocupa hasta la posicion 
 4. Se declara un puntero de tipo `informacionCelda` y lo iguala al puntero de la segunda asignacion, por lo que ambos apuntan a `c`.
 
 ## Ejercicio 4
+
+| Expresion | Correcta | Valor |
+|----------|----------|----------|
+| `data1.c` | ✅ | 30 |
+| `dataPtr->c` | ✅ | 30 |
+| `dataPtr.c` | ❌ | - |
+| `data1.next->b` | ✅ |20  |
+| `dataPtr->next->b` | ✅ | 20 |
+| `dataPtr.next.b` | ❌ | - |
+| `dataPtr->next.b` | ❌ | - |
+| `(*(dataPtr->next)).b` | ✅ | 20 |
+| `data1.next->next->a` | ✅ | 10 |
+| `dataPtr->next->next.a` | ❌ | - |
+| `dataPtr->next->next->a` | ✅ | 10 |
+| `dataPtr->next->a` | ❌ | - |
+| `dataPtr->next->next->b` | ❌ | - |
